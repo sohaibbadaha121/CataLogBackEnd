@@ -8,7 +8,7 @@ import java.util.List;
 @RequestMapping("/favorites")
 @CrossOrigin(origins = "*")
 public class FavoriteCatController {
- private final FavoriteCatService favoriteCatService;
+    private final FavoriteCatService favoriteCatService;
 
     public FavoriteCatController(FavoriteCatService favoriteCatService) {
         this.favoriteCatService = favoriteCatService;
@@ -16,12 +16,17 @@ public class FavoriteCatController {
 
 
     @GetMapping
-    public List<FavoriteCats> getfavoritecats(){
-      return   favoriteCatService.getallcats();
+    public List<FavoriteCats> getfavoritecats() {
+        return favoriteCatService.getallcats();
     }
 
     @PostMapping
-    public FavoriteCats savefavoritecats(@RequestBody FavoriteCats  favoriteCats){
-      return favoriteCatService.Savecatids(favoriteCats);
+    public FavoriteCats savefavoritecats(@RequestBody FavoriteCats favoriteCats) {
+        return favoriteCatService.Savecatids(favoriteCats);
+    }
+
+    @DeleteMapping("/{catId}")
+    public void deletecat(@PathVariable String catId) {
+        favoriteCatService.delete(catId);
     }
 }

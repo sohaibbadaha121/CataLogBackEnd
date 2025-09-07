@@ -22,4 +22,11 @@ public class FavoriteCatService {
         return favoriteCatInterface.findAll();
     }
 
+    public void delete(String catId) {
+        FavoriteCats favorite = favoriteCatInterface.findByCatId(catId);
+        if(favorite != null) {
+            favoriteCatInterface.delete(favorite);
+        }
+    }
 }
+
