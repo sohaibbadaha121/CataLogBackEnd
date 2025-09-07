@@ -1,7 +1,9 @@
 package com.catlogBackEnd.catlogBackEnd;
 
-import java.util.List;
+import org.springframework.stereotype.Service;
 
+import java.util.List;
+@Service
 public class FavoriteCatService {
 
     private final FavoriteCatInterface  favoriteCatInterface;
