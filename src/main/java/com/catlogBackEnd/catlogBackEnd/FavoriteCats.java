@@ -8,7 +8,7 @@ public class FavoriteCats {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private String catid;
+    private String catId;
 
     public Integer getId() {
         return id;
@@ -18,12 +18,12 @@ public class FavoriteCats {
         this.id = id;
     }
 
-    public String getCatid() {
-        return catid;
+    public String getCatId() {
+        return catId;
     }
 
-    public void setCatid(String catid) {
-        this.catid = catid;
+    public void setCatId(String catId) {
+        this.catId = catId;
     }
 }
 
